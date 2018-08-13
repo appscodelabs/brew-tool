@@ -51,25 +51,23 @@ func NewCmdCreate() *cobra.Command {
 }
 
 type Homebrew struct {
-	Name             string
-	Owner            string
-	Repo             string
-	BrewOwner        string
-	BrewRepo         string
-	Author           string
-	AuthorEmail      string
-	Folder           string
-	Caveats          string
-	Plist            string
-	Install          string
-	Dependencies     []string
-	Test             string
-	Conflicts        []string
-	Description      string
-	Homepage         string
-	SkipUpload       bool
-	DownloadStrategy string
-	SourceTarball    string
+	Name         string
+	Owner        string
+	Repo         string
+	BrewOwner    string
+	BrewRepo     string
+	Author       string
+	AuthorEmail  string
+	Folder       string
+	Caveats      string
+	Plist        string
+	Install      string
+	Dependencies []string
+	Test         string
+	Conflicts    []string
+	Description  string
+	Homepage     string
+	SkipUpload   bool
 }
 
 func runCreate(brew Homebrew) {
@@ -96,6 +94,10 @@ func runCreate(brew Homebrew) {
 	var path = filepath.Join("dist/", filename)
 	if err := ioutil.WriteFile(path, content.Bytes(), 0644); err != nil {
 		log.Fatal(err)
+	}
+
+	if brew.SkipUpload {
+		return
 	}
 
 	message := fmt.Sprintf("Brew formula update for %s version %s", artifact.Name, artifact.Version)
