@@ -15,7 +15,7 @@ import (
 
 	"text/template"
 
-	"github.com/appscodelabs/brew-tool/internal/git"
+	"github.com/appscodelabs/brewer/internal/git"
 	"github.com/google/go-github/github"
 	"github.com/spf13/cobra"
 	"golang.org/x/oauth2"

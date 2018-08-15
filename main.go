@@ -4,7 +4,7 @@ import (
 	"os"
 
 	logs "github.com/appscode/go/log/golog"
-	"github.com/appscodelabs/brew-tool/cmds"
+	"github.com/appscodelabs/brewer/cmds"
 )
 
 func main() {

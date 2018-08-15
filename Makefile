@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-BIN := brew-tool
+BIN := brewer
 CGO_ENV ?= CGO_ENABLED=0
 PKG := github.com/appscodelabs/$(BIN)
 UID := $(shell id -u $$USER)
